@@ -22,7 +22,16 @@ with tab1:
     South Africa - Bank Loan RCT - 53,650 Observations
 
     ### Original results
-    <<Your description here, in Markdown>>
+    -The main result on price is that the probability of applying before 
+    the deadline (8.5% in the full sample) rose 0.3 of a percentage point for
+    every 100–basis point reduction in the monthly interest rate.
+    -Three variables show significant increases in takeup: one example loan,
+    no suggested loan use, and female photo.
+    -Option value (longer deadlines make the offer more valuable and induce takeup)
+    dominates any time management problem in our context: takeup and loan amount 
+    increased dramatically with deadline length.
+
+
     """
     )
     # st.image("<<path to image from project's root, if needed>>") # uncomment this line if you would like to add an image

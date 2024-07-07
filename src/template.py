@@ -61,7 +61,7 @@ with tab3:
 
     st.markdown('''<<However, we also find that the ATE is negative given the following. 
     This could be explained due to the fact that high risk borrowers are less likely to take on more loans.>>)''')
-    st.image("ATE_final.png")
+    st.image("Causal_Tree.png")
     # st.image("<<path to image from project's root, if needed>>") # uncomment this line if you would like to add an image
 
 with tab4:

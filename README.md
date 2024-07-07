@@ -6,34 +6,21 @@ It organizes every step of the process: merging and cleaning (several) data sets
 **To use it**: follow the setup instructions below.
 
 ## Summary
-0. Workflow
 1. Requirements
 2. Setup
 3. Folders
 4. Files
 5. Leveraging on Github Capabilities
-6. Writing
 7. Journal Submissions
 8. Principles
-9. Further Reading
-
-## 0. Workflow
-
-![](extra/workflow.png)
 
 ## 1. Requirements
 
-This workflow requires:
-- [Bash](https://www.gnu.org/software/bash/) [Free]
 - [Python](https://www.python.org) [Free] 
 - [LaTeX](https://www.latex-project.org) [Free]
 
 Other great languages and softwares may also be used.
 - [R](https://www.r-project.org) [Free]
-- [Stata](https://www.stata.com) [Licensed]
-- [Matlab](https://www.mathworks.com/products/matlab) [Licensed]
-
-For now it is only adapted for OSX (Apple) environments. But feel free to adapt it to Windows (and please share it with me!).
 
 ## 2. Setup
 
@@ -111,17 +98,6 @@ You're good to go. This repository is now ready for the standard workflow descri
 	- Use [semantic versioning](https://semver.org/) for naming, e.g. `v0.1`, `v1.0.2`.
 - Only modify files via pull requests. Use closing keywords to close issues.
 
-## 6. Writing
-
-All writing should be done within the repository to preserve versioning and consistency.
-
-- Keep a set of continuously-updated slides reflecting the current state and vision of the project.
-- Sync this repository with online LaTeX editing tools, such as [Overleaf](https://www.overleaf.com/), for simultaneous editing and comments.
-	- Follow these instructions to [integrate Overleaf with Dropbox](https://www.overleaf.com/learn/how-to/Dropbox_Synchronization).
-	- Sync Overleaf project to a folder `/products/paper`.
-	- **Important**: the project's "true" state stays in Github. Thus, things always have to be committed on Github after edits.
-- Keep all `.bib` references organized in `/extra/references/library.bib`. See principle about reference manager systems below.
-
 ## 7. Journal Submissions
 
 Use this folder and Github for working on reviewing drafts (e.g. after a Revise and Resubmit request).
@@ -164,11 +140,4 @@ Use tags: `review`, `build`, `analysis`, `writing`, `negative replies`.
 - Keep documentation lean and clean.
 - Keep this folder organized. Your future self thanks your present effort.
 
-## 9. Further Reading
 
-- [Gentzkow & Shapiro (2014) Code and Data for the Social Sciences](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)
-- [Julian Reif's Stata Coding Guide](https://reifjulian.github.io/guide)
-- [Michael Stepner's Coding Style Guide](https://github.com/michaelstepner/healthinequality-code/blob/master/code/readme.md)
-- [Gentzkow & Shapiro Lab's Paper Template](https://github.com/gslab-econ/template)
-- [Tutorial on how to combine Git and Dropbox](https://github.com/kbjarkefur/GitHubDropBox)
-- [Guidelines on how to name git commits](https://www.conventionalcommits.org)

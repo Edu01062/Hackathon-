@@ -32,12 +32,14 @@ with tab2:
     st.markdown("""
     ### Proposed extension
 
-    Casual Forest and Double Lasson with partialling Out
-
+    Casual Forest and Causal Tree
+    
     ### Justification
     <<Generally we can say that it is helpful for heteregenous effect and finding the particular effect
     of one treatment effect. In this case, we will be studying being a high-risk creditor to the outcome
-    of applying to the offered loan.>>
+    of applying to the offered loan. Also, we considere that causal trees and causal forest are crucial 
+    for data analysis when seeking to understand complex and heterogeneous causal relationships.
+    >>
     """
     )
     # st.image("<<path to image from project's root, if needed>>") # uncomment this line if you would like to add an image
@@ -59,7 +61,7 @@ with tab3:
 
     st.markdown('''<<However, we also find that the ATE is negative given the following. 
     This could be explained due to the fact that high risk borrowers are less likely to take on more loans.>>)''')
-    st.image("ATE_final.png")
+    st.image("Causal_Tree.png")
     # st.image("<<path to image from project's root, if needed>>") # uncomment this line if you would like to add an image
 
 with tab4:

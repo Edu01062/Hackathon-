@@ -51,18 +51,15 @@ with tab3:
     ### Extension results
 
     <<We find that interest rate is generally one of the major factors in the average treatment effect.>>
-    table = pd.read_csv("<<table_forest.csv>>")
-
-    st.image("<<CATE.png>>")
-
-
-    st.stable(table)
-
-    <<However, we also find that the ATE is negative given the following>>
-
-    st.image("<<ATE_final.png>>")
     """
     )
+    st.image("CATE.png")
+    table = pd.read_csv("table_forest.csv")
+    st.table(table)
+
+    st.markdown('''<<However, we also find that the ATE is negative given the following. 
+    This could be explained due to the fact that high risk borrowers are less likely to take on more loans.>>)''')
+    st.image("ATE_final.png")
     # st.image("<<path to image from project's root, if needed>>") # uncomment this line if you would like to add an image
 
 with tab4:

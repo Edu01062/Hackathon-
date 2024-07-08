@@ -1,4 +1,3 @@
-
 This folder provides an all-encompassing working structure for empirical papers.
 
 It organizes every step of the process: merging and cleaning (several) data sets, performing analyses (tables, figures, regressions), writing the paper and talks themselves, and submitting it to journals.
@@ -11,15 +10,16 @@ It organizes every step of the process: merging and cleaning (several) data sets
 3. Folders
 4. Files
 5. Leveraging on Github Capabilities
-7. Journal Submissions
-8. Principles
+6. Journal Submissions
+7. Principles
 
 ## 1. Requirements
 
 - [Python](https://www.python.org) [Free] 
 - [LaTeX](https://www.latex-project.org) [Free]
+- [Streamlit](https://streamlit.io) [Free]
 
-Other great languages and softwares may also be used.
+Other great languages and software may also be used:
 - [R](https://www.r-project.org) [Free]
 
 ## 2. Setup
@@ -98,7 +98,7 @@ You're good to go. This repository is now ready for the standard workflow descri
 	- Use [semantic versioning](https://semver.org/) for naming, e.g. `v0.1`, `v1.0.2`.
 - Only modify files via pull requests. Use closing keywords to close issues.
 
-## 7. Journal Submissions
+## 6. Journal Submissions
 
 Use this folder and Github for working on reviewing drafts (e.g. after a Revise and Resubmit request).
 
@@ -111,7 +111,7 @@ Flow:
 
 Use tags: `review`, `build`, `analysis`, `writing`, `negative replies`.
 
-## 8. Principles
+## 7. Principles
 
 - For each new project, start (i) a structured versioned folder, (ii) a task manager project, and (iii) a set of slides.
 	1. Copy this folder and use a version control system (e.g. [Git](https://git-scm.com/)).
@@ -140,4 +140,20 @@ Use tags: `review`, `build`, `analysis`, `writing`, `negative replies`.
 - Keep documentation lean and clean.
 - Keep this folder organized. Your future self thanks your present effort.
 
+## 8. Using Streamlit for Automation
 
+We recommend using [Streamlit](https://streamlit.io) for an interactive and user-friendly way to automate the workflow. You can access the Streamlit app for this project [here](https://jbohuyb85jbdwaycsnutpn.streamlit.app/).
+
+### To get started with Streamlit:
+
+1. Install Streamlit:
+    ```bash
+    pip install streamlit
+    ```
+
+2. Run the Streamlit app:
+    ```bash
+    streamlit run streamlit_app.py
+    ```
+
+3. Follow the interactive interface to clean directories, get input data, run builds and analyses, and compile LaTeX documents.

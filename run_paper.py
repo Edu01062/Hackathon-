@@ -9,7 +9,11 @@ def clean_directories(base_path):
         folder_path = os.path.join(base_path, folder.strip('/'))
         if os.path.exists(folder_path):
             shutil.rmtree(folder_path)
-        os.makedirs(folder_path, exist_ok=True)
+        try:
+            os.makedirs(folder_path, exist_ok=True)
+            print(f"Created directory: {folder_path}")
+        except Exception as e:
+            print(f"Error creating directory {folder_path}: {e}")
     print("Directories cleaned")
 
 def get_input(base_path):

@@ -1,6 +1,6 @@
 import os
 import shutil
-from subprocess import call, CalledProcessError
+from subprocess import call, CalledProcessError, run, PIPE
 import glob
 
 def clean_directories(base_path):
@@ -42,31 +42,36 @@ def compile_tex(base_path):
 
     if not os.path.isfile(tex_file):
         print(f"Error: TeX file not found at {tex_file}")
-        return False
+        return False, "TeX file not found"
 
     try:
-        call(['latexmk', '-pdf', tex_file])
-        print("TeX compiled")
+        result = run(['latexmk', '-pdf', tex_file], stdout=PIPE, stderr=PIPE, text=True)
+        if result.returncode != 0:
+            print(f"Error compiling TeX: {result.stderr}")
+            return False, result.stderr
         if os.path.isfile(pdf_file):
-            return pdf_file
+            return pdf_file, "TeX compiled successfully"
         else:
             print("Error: PDF file not generated")
-            return False
+            return False, "PDF file not generated"
     except CalledProcessError as e:
         print(f"Error compiling TeX: {e}")
-        return False
+        return False, str(e)
     except FileNotFoundError:
         print("Error: latexmk command not found. Make sure LaTeX is installed and latexmk is available in your PATH.")
-        return False
-    
+        return False, "latexmk command not found"
+
 def main():
     base_path = '/path/to/main_paper'  # Update this to your actual path
     clean_directories(base_path)
     get_input(base_path)
     run_build(base_path)
     run_analysis(base_path)
-    compile_tex(base_path)
-    print("Congratulations, you have a shiny new paper!")
+    pdf_file, message = compile_tex(base_path)
+    if pdf_file:
+        print("Congratulations, you have a shiny new paper!")
+    else:
+        print(f"Compilation failed: {message}")
 
 if __name__ == "__main__":
     main()

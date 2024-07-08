@@ -38,18 +38,27 @@ def run_analysis(base_path):
 def compile_tex(base_path):
     print("Compiling TeX")
     tex_file = os.path.join(base_path, 'products/paper/main_article.tex')
+    pdf_file = os.path.join(base_path, 'products/paper/main_article.pdf')
+
     if not os.path.isfile(tex_file):
         print(f"Error: TeX file not found at {tex_file}")
-        return
+        return False
 
     try:
-        call(['latexmk', tex_file])
+        call(['latexmk', '-pdf', tex_file])
         print("TeX compiled")
+        if os.path.isfile(pdf_file):
+            return pdf_file
+        else:
+            print("Error: PDF file not generated")
+            return False
     except CalledProcessError as e:
         print(f"Error compiling TeX: {e}")
+        return False
     except FileNotFoundError:
         print("Error: latexmk command not found. Make sure LaTeX is installed and latexmk is available in your PATH.")
-
+        return False
+    
 def main():
     base_path = '/path/to/main_paper'  # Update this to your actual path
     clean_directories(base_path)

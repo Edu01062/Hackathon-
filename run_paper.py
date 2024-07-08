@@ -1,6 +1,6 @@
 import os
 import shutil
-from subprocess import call
+from subprocess import call, CalledProcessError
 import glob
 
 def clean_directories(base_path):
@@ -37,8 +37,18 @@ def run_analysis(base_path):
 
 def compile_tex(base_path):
     print("Compiling TeX")
-    call(['latexmk', os.path.join(base_path, 'products/paper/main_article.tex')])
-    print("TeX compiled")
+    tex_file = os.path.join(base_path, 'products/paper/main_article.tex')
+    if not os.path.isfile(tex_file):
+        print(f"Error: TeX file not found at {tex_file}")
+        return
+
+    try:
+        call(['latexmk', tex_file])
+        print("TeX compiled")
+    except CalledProcessError as e:
+        print(f"Error compiling TeX: {e}")
+    except FileNotFoundError:
+        print("Error: latexmk command not found. Make sure LaTeX is installed and latexmk is available in your PATH.")
 
 def main():
     base_path = '/path/to/main_paper'  # Update this to your actual path

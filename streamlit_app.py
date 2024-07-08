@@ -22,12 +22,7 @@ if st.button("Run Analysis"):
     st.write("Analysis Executed")
 
 if st.button("Compile TeX Document"):
-    pdf_file, message = compile_tex(base_path)
-    if pdf_file:
-        with open(pdf_file, "rb") as f:
-            st.download_button(label="Download PDF", data=f, file_name="main_article.pdf")
-        st.write("TeX Document Compiled and Ready for Download")
-    else:
-        st.write(f"TeX Compilation Failed: {message}")
+    compile_tex(base_path)
+    st.write("TeX Document Compiled")
 
 st.write("Congratulations, you have a shiny new paper!")
